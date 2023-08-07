@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: darkgrey;
+            background-image: url("https://t4.ftcdn.net/jpg/01/19/11/55/360_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ddd; 
+            border-radius: 5px;
+            background-color: #fff; 
+        }
+        .container h1 {
+            margin-bottom: 20px;
+            color: #333; 
+        }
+        .container h4 {
+            margin-bottom: 20px;
+            color: #666; 
+        }
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .container .name-inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .container .name-inputs input[type="text"] {
+            width: 48%; 
+        }
+        
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #FF69B4; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container p {
+            margin-bottom: 15px;
+        }
+        .container a {
+            text-decoration: none;
+            color: #4CAF50; 
+        }
+        .flash {
+            color: red;
+            list-style: none;
+            padding: 0;
+        }
+        .flash li {
+            margin-bottom: 5px;
+        }
+        .flash .error {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <h4>Create your account. It's free and only takes a minute.</h4>
+      
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+      
+        <form method="post" action="/register">
+            <div class="name-inputs">
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+            </div>
+            <input type="email" id="email" name="email" placeholder="Email" required><br>
+            <input type="password" id="password" name="password" placeholder="Password" required><br>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required><br>
+            <input type="submit" value="Register Now">
+        </form>
+       
+        <p>Already have an account? <a href="/">Sign in</a></p>
+    </div>
+</body>
+</html>

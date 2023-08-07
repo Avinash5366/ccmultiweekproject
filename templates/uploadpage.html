@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload and Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf8e5; /* Light green color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .upload-container {
+            max-width: 400px;
+            padding: 30px;
+            background: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .upload-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .form-group input[type="file"],
+        .form-group input[type="email"],
+        .form-group input[type="submit"] {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form-group input[type="file"] {
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .info {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload your local File </h1>
+        <h2>And Also enter emails to send</h2>
+        <form class="upload-form" id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fileInput">Select File:</label>
+                <input type="file" id="fileInput" name="fileToUpload" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput1">Email Address 1:</label>
+                <input type="email" id="emailInput1" name="emails" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput2">Email Address 2:</label>
+                <input type="email" id="emailInput2" name="emails">
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput3">Email Address 3:</label>
+                <input type="email" id="emailInput3" name="emails">
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput4">Email Address 4:</label>
+                <input type="email" id="emailInput4" name="emails">
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput5">Email Address 5:</label>
+                <input type="email" id="emailInput5" name="emails">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Upload and Send">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
